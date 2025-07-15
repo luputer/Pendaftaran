@@ -18,6 +18,7 @@ Route::put('/guru/{id}', [GuruController::class, 'update'])->name('guru.update')
 Route::delete('/guru/{id}', [GuruController::class, 'destroy'])->name('guru.destroy');
 
 
+Route::resource('dosen', App\Http\Controllers\DosenController::class);
 
 Route::get('/siswa', [SiswaController::class, 'index'])
     ->name('siswa.index');
