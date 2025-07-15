@@ -21,9 +21,15 @@ class DatabaseSeeder extends Seeder
         ]);
 
         $this->call([
-            DosenSeeder::class,
+            GuruSeeder::class,
           SiswaSeeder::class
         ]);
+      
+        // User::factory()->create([
+        //     'name' => 'Test User',
+        //     'email' => 'test@example.com',
+        // ]);
 
+     
     }
 }   

@@ -9,4 +9,11 @@ class guru extends Model
 {
     /** @use HasFactory<\Database\Factories\GuruFactory> */
     use HasFactory;
+
+    protected $fillable = [
+      'nama',
+      'email',
+      'alamat'
+    ];
+
 }
