@@ -1,13 +1,25 @@
 <?php
 
+
+use App\Http\Controllers\Gurucontroller;
 use App\Http\Controllers\SiswaController;
+
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/guru',[Gurucontroller::class, 'index'])->name('guru.index');
+Route::get('/guru/tambah',[Gurucontroller::class, 'create'])->name('guru.create');
+Route::post('/guru/tambah',[Gurucontroller::class, 'store'])->name('guru.store');
+Route::get('/guru/{id}/edit', [GuruController::class, 'edit'])->name('guru.edit');
+Route::put('/guru/{id}', [GuruController::class, 'update'])->name('guru.update');
+Route::delete('/guru/{id}', [GuruController::class, 'destroy'])->name('guru.destroy');
+
+
 Route::resource('dosen', App\Http\Controllers\DosenController::class);
+
 Route::get('/siswa', [SiswaController::class, 'index'])
     ->name('siswa.index');
 Route::get(
