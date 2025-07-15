@@ -7,6 +7,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::resource('dosen', App\Http\Controllers\DosenController::class);
 Route::get('/siswa', [SiswaController::class, 'index'])
     ->name('siswa.index');
 Route::get(
@@ -23,3 +24,4 @@ Route::put('/siswa/{id}', [SiswaController::class, 'update'])
     ->name('siswa.update');
 
 Route::delete('/siswa/{siswa}', [SiswaController::class, 'destroy'])->name('siswa.destroy');
+
