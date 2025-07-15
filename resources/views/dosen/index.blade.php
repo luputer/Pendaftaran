@@ -49,7 +49,7 @@
                                 @endforelse
                             </tbody>
                         </table>
-                        {{ $dosen->links() }}
+                        <!-- {{ $dosen->links() }} -->
                     </div>
                 </div>
             </div>
