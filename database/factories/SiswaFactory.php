@@ -18,9 +18,10 @@ class SiswaFactory extends Factory
     {
         return [
             'nama' => $this->faker->name(),
-            'email' => $this->faker->unique()->safeEmail(),
-            'kelas' => $this->faker->randomElement(['10A', '10B', '11A', '11B']),
-            'nilai' => $this->faker->numberBetween(0, 99), // No decimal points
+            'email' => $this->faker->safeEmail(),
+            'kelas' => $this->faker->randomElement(['10A', '11B', '12C']),
+            'nilai' => $this->faker->numberBetween(0, 100),
+            'image' => $this->faker->imageUrl(200, 200, 'people', true, 'student'),
         ];
     }
 }
