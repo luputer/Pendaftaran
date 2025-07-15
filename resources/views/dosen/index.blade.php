@@ -17,7 +17,7 @@
                 </div>
                 <div class="card border-0 shadow-sm rounded">
                     <div class="card-body">
-                        <a href="{{ route('dosen.create') }}" class="btn btn-md btn-success mb-3">ADD PRODUCT</a>
+                        <a href="{{ route('dosen.create') }}" class="btn btn-md btn-success mb-3">ADD Dosen</a>
                         <table class="table table-bordered">
                             <thead>
                                 <tr>
@@ -61,23 +61,23 @@
 
     <script>
         //message with sweetalert
-        @if(session('success'))
-            Swal.fire({
-                icon: "success",
-                title: "BERHASIL",
-                text: "{{ session('success') }}",
-                showConfirmButton: false,
-                timer: 2000
-            });
-        @elseif(session('error'))
-            Swal.fire({
-                icon: "error",
-                title: "GAGAL!",
-                text: "{{ session('error') }}",
-                showConfirmButton: false,
-                timer: 2000
-            });
-        @endif
+        // @if(session('success'))
+        //     Swal.fire({
+        //         icon: "success",
+        //         title: "BERHASIL",
+        //         text: "{{ session('success') }}",
+        //         showConfirmButton: false,
+        //         timer: 2000
+        //     });
+        // @elseif(session('error'))
+        //     Swal.fire({
+        //         icon: "error",
+        //         title: "GAGAL!",
+        //         text: "{{ session('error') }}",
+        //         showConfirmButton: false,
+        //         timer: 2000
+        //     });
+        // @endif
 
     </script>
 
