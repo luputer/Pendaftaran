@@ -23,7 +23,7 @@ class Gurucontroller extends Controller
      */
     public function create()
     {
-      return view('guru.create');
+        return view('guru.create');
         //
     }
 
@@ -35,13 +35,13 @@ class Gurucontroller extends Controller
 
         //
         $request->validate([
-        'nama' => 'required|string|max:200',
-        'email' => 'required|string|email|max:200',
-        'alamat' => 'required|string|max:200'
-    ]);
+            'nama' => 'required|string|max:200',
+            'email' => 'required|string|email|max:200',
+            'alamat' => 'required|string|max:200'
+        ]);
 
-    guru::create($request->all());
-    return redirect()->route('guru.index')->with('suskes','berhasil menambahkan data');
+        guru::create($request->all());
+        return redirect()->route('guru.index')->with('suskes', 'berhasil menambahkan data');
     }
 
     /**
@@ -57,8 +57,8 @@ class Gurucontroller extends Controller
      */
     public function edit(string $id)
     {
-    $guru = guru::findOrFail($id);
-    return view('guru.edit', compact('guru'));
+        $guru = guru::findOrFail($id);
+        return view('guru.edit', compact('guru'));
         //
     }
 
@@ -66,22 +66,22 @@ class Gurucontroller extends Controller
      * Update the specified resource in storage.
      */
     public function update(Request $request, $id)
-{
-    $request->validate([
-        'nama' => 'required|string|max:200',
-        'email' => 'required|string|email|max:200',
-        'alamat' => 'required|string|max:200'
-    ]);
+    {
+        $request->validate([
+            'nama' => 'required|string|max:200',
+            'email' => 'required|string|email|max:200',
+            'alamat' => 'required|string|max:200'
+        ]);
 
-    $guru = guru::findOrFail($id);
-    $guru->update([
-        'nama' => $request->nama,
-        'email' => $request->email,
-        'alamat' => $request->alamat,
-    ]);
+        $guru = guru::findOrFail($id);
+        $guru->update([
+            'nama' => $request->nama,
+            'email' => $request->email,
+            'alamat' => $request->alamat,
+        ]);
 
-    return redirect()->route('guru.index')->with('success', 'Data guru berhasil diperbarui.');
-}
+        return redirect()->route('guru.index')->with('success', 'Data guru berhasil diperbarui.');
+    }
 
 
     /**
@@ -89,10 +89,9 @@ class Gurucontroller extends Controller
      */
     public function destroy(string $id)
     {
-     $guru= Guru::findOrfail($id);
-     $guru->delete();
-    return redirect()->route('guru.index')->with('success', 'Data guru berhasil dihapus.');
-}
-        //
+        $guru = Guru::findOrfail($id);
+        $guru->delete();
+        return redirect()->route('guru.index')->with('success', 'Data guru berhasil dihapus.');
     }
-
+    //
+}
